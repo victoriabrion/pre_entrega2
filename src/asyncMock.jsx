@@ -26,6 +26,14 @@ const products = [
         img: 'https://m.media-amazon.com/images/I/71laVfWEkCS._UF1000,1000_QL80_.jpg',
         stock: 20,
     },
+    {
+        id: '4',
+        artist: 'Caroline Polachek',
+        price: 1000,
+        category: 'Merch',
+        img: 'https://shop.carolinepolachek.com/cdn/shop/files/VOLCANOSPIRALINGTOURTEE-SUMMER2023_1024x1024@2x.png?v=1697581960',
+        stock: 10,
+    },
 ]
 
 export const getProducts = () => {
@@ -47,7 +55,7 @@ export const getProductById = (productId) => {
 export const getProductByCategory = (productCategory) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(products.find(prod => prod.category === productCategory))
+            resolve(products.filter(prod => prod.category === productCategory))
         }, 500);
     })
 }
